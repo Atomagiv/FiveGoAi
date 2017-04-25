@@ -5,8 +5,8 @@ from copy import deepcopy as dp
 import ai
 import cProfile
 goMap=[]
-n=15
-m=15
+n=12
+m=12
 
 def check():
 	'''check if the game is over '''

@@ -49,8 +49,10 @@ class FiveGoAi():
 			x=x-dx
 			y=y-dy
 		num=num-1
+		if num>=5 :
+			score=score+1000000000000000
 		if kong==1 and num>=4 :
-			score=score+100000000
+			score=score+10000000000
 		else :
 			if kong==2 and num>=3 :
 				score=score+100000000
@@ -78,6 +80,13 @@ class FiveGoAi():
 					score=score+self.calNum(goType,0,1,x,y)
 					score=score+self.calNum(goType,1,0,x,y)
 					score=score+self.calNum(goType,-1,1,x,y)
+				if (self.goMap[i][j]==1-goType) :
+					x=copy(i)
+					y=copy(j)
+					score=score-self.calNum(1-goType,1,1,x,y)
+					score=score-self.calNum(1-goType,0,1,x,y)
+					score=score-self.calNum(1-goType,1,0,x,y)
+					score=score-self.calNum(1-goType,-1,1,x,y)
 				j=j+1
 			i=i+1
 		return score
@@ -88,9 +97,9 @@ class FiveGoAi():
 		if level==1 :
 			return self.giveScore(goType)
 		if goType==self.goType:
-			score=-1000000000
+			score=-10000000000000000
 		else :
-			score=1000000000
+			score=10000000000000000
 		i=0
 		while (i<n):
 			j=0
