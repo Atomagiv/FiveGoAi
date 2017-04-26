@@ -5,8 +5,20 @@ from copy import deepcopy as dp
 import ai
 import cProfile
 goMap=[]
-n=12
-m=12
+n=9
+m=9
+for i in range(0,n):
+	x=[]
+	for j in range(0,m):
+		print("-+--",end='')
+		x.append(-1)
+	print(" "+str(i+1)+" ")
+	goMap.append(x)
+	for j in range(0,m):
+		print(" |  ",end='')
+	print()
+for i in range(1,m+1):
+	print(str(i)+"   ",end='')
 
 def check():
 	'''check if the game is over '''
@@ -66,19 +78,6 @@ def check():
 				return True
 	return False
 
-for i in range(0,n):
-	x=[]
-	for j in range(0,m):
-		print("-+--",end='')
-		x.append(-1)
-	print(" "+str(i+1)+" ")
-	goMap.append(x)
-	for j in range(0,m):
-		print(" |  ",end='')
-	print()
-for i in range(1,m+1):
-	print(str(i)+"   ",end='')
-
 print()
 ai1=ai.FiveGoAi(1,goMap)
 ai2=ai.FiveGoAi(0,goMap)
@@ -104,9 +103,9 @@ while (not check()):
 		turn=1
 
 
-	goMap[step[0]][step[1]]=turn
-	ai1.goMap[step[0]][step[1]]=turn
-	ai2.goMap[step[0]][step[1]]=turn
+	goMap[step[0]][step[1]]=not turn
+	ai1.goMap[step[0]][step[1]]=not turn
+	ai2.goMap[step[0]][step[1]]=not turn
 	for i in range(0,n):
 		for j in range(0,m):
 			if (goMap[i][j]!=-1) :
