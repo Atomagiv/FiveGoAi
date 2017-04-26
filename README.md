@@ -1,2 +1,2 @@
 # FiveGoAi
-A little ai of Fivego(五子棋)
+A little ai of Gomoku(五子棋)
