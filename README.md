@@ -1,2 +1,2 @@
 # GomokuAi
-A little ai of Gomoku(五子棋)
+五子棋 AI
